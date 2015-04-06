@@ -1,0 +1,78 @@
+#header > #main_menu
+{
+    background: #ED9427;
+    text-align: center;
+    font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
+    box-shadow: 0 0 2px black;
+}
+
+#header > #main_menu ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#header > #main_menu ul > li
+{
+    display: inline-block;
+}
+
+#header > #main_menu ul > li > a
+{
+    display: block;
+    padding: 19px 26px 18px 70px;
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    background-repeat: no-repeat;
+    background-position:  30px 12px;
+    font-weight: bold;
+}
+
+#header > #main_menu ul > li > a:hover
+{
+    background-color: #ECF499;
+}
+
+#header > #main_menu ul > li > a:active,
+#header > #main_menu ul > li > a:focus
+{
+   outline: none;
+}
+
+#header > #main_menu ul > li.current > a
+{
+    background-color: #EC550B;
+}
+
+#header > #main_menu .home a
+{
+    background-image: url("/images/menu/home.png");
+}
+
+#header > #main_menu .news a
+{
+    background-image: url("/images/menu/news.png");
+}
+
+#header > #main_menu .projects a
+{
+    background-image: url("/images/menu/projects.png");
+}
+
+#header > #main_menu .calendar a
+{
+    background-image: url("/images/menu/calendar.png");
+}
+
+#header > #main_menu .gallery a
+{
+    background-image: url("/images/menu/gallery.png");
+}
+
+#header > #main_menu .joinus a
+{
+    background-image: url("/images/menu/joinus.png");
+}

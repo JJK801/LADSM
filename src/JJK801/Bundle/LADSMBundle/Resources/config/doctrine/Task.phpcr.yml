@@ -1,0 +1,21 @@
+JJK801\Bundle\LADSMBundle\Document\Task:
+    repositoryClass: JJK801\Bundle\LADSMBundle\Repository\Task
+    fields:
+        slugKey:
+            type: string
+            property: slug_key
+        startAt:
+            type: date
+            property: start_at
+            nullable: true
+        endAt:
+            type: date
+            property: end_at
+            nullable: true
+        createdAt:
+            type: date
+            property: "jcr:created"
+        updatedAt:
+            type: date
+            property: "jcr:lastModified"
+            nullable: true

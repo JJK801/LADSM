@@ -1,0 +1,103 @@
+#content
+{
+    background-color: white;
+    box-shadow: 0 0 1px black;
+    font-size: 14px;
+    padding: 15px;
+    width: 970px;
+    font-family: Impact, "Arial Black", Arial, Verdana, sans-serif;
+}
+
+#content p
+{
+    margin-top: 0px;
+}
+
+#home_content * + p
+{
+    margin-top: 14px;
+}
+
+#joinus_content > img
+{
+    margin: 0 18px
+}
+
+#block-cms-content-about-joinus-donate h2,
+#block-cms-content-about-joinus-buy h2,
+#block-cms-content-about-joinus-join h2
+{
+    padding: 5px 0 5px 40px;
+    background-repeat: no-repeat;
+}
+
+#block-cms-content-about-joinus-donate h2
+{
+    background-image: url('/images/joinus/donate32.png');
+}
+
+#block-cms-content-about-joinus-buy h2
+{
+    background-image: url('/images/joinus/buy32.png');
+}
+
+#block-cms-content-about-joinus-join h2
+{
+    background-image: url('/images/joinus/join32.png');
+}
+
+#calendar_content .articleContainer h2,
+#news_content .articleContainer h2
+{
+    display: none;
+}
+
+#calendar_content .tasks,
+#news_content .news
+{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#calendar_content .tasks th,
+#news_content .news th
+{
+    background-color: lightgrey;
+}
+
+#calendar_content .tasks th,
+#calendar_content .tasks td,
+#news_content .news th,
+#news_content .news td
+{
+    padding: 10px 0;
+}
+
+#calendar_content .tasks .start_at,
+#calendar_content .tasks .end_at,
+#news_content .news .start_at
+{
+    width: 200px;
+    text-align: center;
+}
+
+#calendar_content .tasks .title a,
+#news_content .news .title a
+{
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+#calendar_content .tasks .title a:hover,
+#news_content .news .title a:hover
+{
+    text-decoration: underline;
+}
+
+#task_content .date
+{
+    font-style: italic;
+}

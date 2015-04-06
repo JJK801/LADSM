@@ -1,0 +1,11 @@
+{% extends "::layout.html.twig" %}
+
+{% block content %}
+    <div id="joinus_content">
+        <h2>{{ sonata_block_render({'name': '/cms/content/about/joinus'}) }}</h2>
+        <img src="{{ asset("images/nous-soutenir.jpg") }}" />
+        {{ sonata_block_render({'name': '/cms/content/about/joinus/donate'}) }}
+        {{ sonata_block_render({'name': '/cms/content/about/joinus/buy'}) }}
+        {{ sonata_block_render({'name': '/cms/content/about/joinus/join'}) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<project name="Install" default="assets" basedir=".." description="LADSM Install build.">
+	<target name="composer">
+		<exec executable="composer.phar install" />
+	</target>
+    <target name="assets">
+		<SymfonyConsole command="cache:clear" />
+		<SymfonyConsole command="assets:install" />
+		<SymfonyConsole command="assetic:dump" />
+	</target>
+</project>

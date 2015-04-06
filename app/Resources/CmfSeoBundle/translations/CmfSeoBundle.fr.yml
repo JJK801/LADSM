@@ -1,0 +1,10 @@
+form:
+    group_seo: Référencement
+    label_title: Title
+    label_metaDescription: Description
+    label_metaKeywords: Mots-clés
+    label_originalUrl: URL Canonique
+    label_extraProperties: Metas "property"
+    label_extraNames: Metas "name"
+    label_extraHttp: Metas "http-equiv"
+    group_advanced: Avancé

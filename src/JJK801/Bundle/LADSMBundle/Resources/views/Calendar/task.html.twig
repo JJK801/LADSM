@@ -1,0 +1,27 @@
+{% extends "::layout.html.twig" %}
+
+{% if cmfMainContent is not defined %}
+    {% set cmfMainContent = object %}
+{% endif %}
+
+{% set page = cmfMainContent %}
+
+{% block highlighted %}
+    
+{% endblock %}
+
+{% block content -%}
+    <div id="task_content">
+        <h2>{{ page.title }}</h2>
+        <div class="date">
+            {% if page.startAt|date("Ymd") == page.endAt|date("Ymd") %}
+            Le <span>{{ page.startAt|date("d/m/Y") }}</span>,
+            De <span>{{ page.startAt|date("H:i") }}</span> à <span>{{ page.endAt|date("H:i") }}</span>
+            {% else %}
+            Du <span>{{ page.startAt|date("d/m/Y") }}</span> à <span>{{ page.startAt|date("H:i") }}</span>,
+            Au <span>{{ page.endAt|date("d/m/Y") }}</span> à <span>{{ page.endAt|date("H:i") }}</span>
+            {% endif %}
+        </div>
+        {{ sonata_block_render({'name': page.id ~ '/editorial'}) }}
+    </div>
+{%- endblock %}

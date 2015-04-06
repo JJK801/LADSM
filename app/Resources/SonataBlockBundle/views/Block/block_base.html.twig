@@ -1,0 +1,5 @@
+{% set tag = tag is defined ?: 'div' %}
+
+<{{ tag }} id="cms-block-{{ block.id }}" class="cms-block cms-block-element">
+    {% block block %}EMPTY CONTENT{% endblock %}
+</{{ tag }}>

@@ -1,0 +1,77 @@
+{% extends "::layout.html.twig" %}
+
+{% block highlighted %}
+    {{ knp_menu_render('home') }}
+    <div id="home_slideshow">
+        {{ sonata_block_render({'name': '/cms/media/home_slideshow'}) }}
+        <a class="home_slideshow-control home_slideshow-stop" href="#"></a>
+        <div class="home_slideshow-pagination"></div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div id="home_content">
+        {{ sonata_block_render({'name': '/cms/content/home'}) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(function() {
+            var carousel = $('#home_slideshow .slideshow')
+                .jcarousel({
+                    animation: {
+                        duration: 600,
+                        easing:   'linear'
+                    },
+                    wrap: "circular"
+                })
+                .jcarouselAutoscroll({
+                    interval: 4000,
+                    target: '+=1',
+                    autostart: true
+                });
+
+            $('#home_slideshow')
+                .on('click', '.home_slideshow-start', function() {
+                    carousel.jcarouselAutoscroll('start');
+                    $(this).removeClass('home_slideshow-start');
+                    $(this).addClass('home_slideshow-stop');
+
+                    return false;
+                });
+
+            $('#home_slideshow')
+                .on('click', '.home_slideshow-stop', function() {
+                    carousel.jcarouselAutoscroll('stop');
+                    $(this).removeClass('home_slideshow-stop');
+                    $(this).addClass('home_slideshow-start');
+
+                    return false;
+                });
+
+            var pagination = $('.home_slideshow-pagination')
+                .on('jcarouselpagination:active', 'a', function() {
+                    $(this).addClass('active');
+                })
+                .on('jcarouselpagination:inactive', 'a', function() {
+                    $(this).removeClass('active');
+                })
+                .jcarouselPagination({
+                    item: function(page) {
+                        var item = $('<a></a>');
+
+                        item.attr('href', '#' + page);
+                        item.click(function () {
+                            carousel.jcarousel('scroll', page-1, true);
+                            return false;
+                        });
+
+                        return item;
+                    },
+                    carousel: carousel
+                });
+            });
+    </script>    
+{% endblock %}

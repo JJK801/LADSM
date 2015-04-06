@@ -1,0 +1,12 @@
+dashboard:
+    label_task: Taches (Agenda)
+    label_news: Actualités
+form:
+    label_start_at: Début
+    label_end_at: Fin
+list:
+    label_start_at: Début
+    label_end_at: Fin
+breadcrumb:
+    link_task_list: Taches (Agenda)
+    link_news_list: Actualités

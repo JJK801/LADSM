@@ -1,0 +1,9 @@
+vendor
+web/bundles
+web/assets
+app/cache
+app/logs
+app/app.sqlite
+bin
+index.html
+maquettes jpg

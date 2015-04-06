@@ -1,0 +1,128 @@
+parameters:
+    security.acl.permission.map.class: Sonata\AdminBundle\Security\Acl\Permission\AdminPermissionMap
+
+    # Documents
+
+    jjk801_ladsm.phpcr.document.task: JJK801\Bundle\LADSMBundle\Document\Task
+    jjk801_ladsm.phpcr.document.news: JJK801\Bundle\LADSMBundle\Document\News
+
+    # Pages
+
+    jjk801_ladsm.phpcr.initializer.page.home.class: JJK801\Bundle\LADSMBundle\Initializer\Page\Home
+    jjk801_ladsm.phpcr.initializer.page.projects.class: JJK801\Bundle\LADSMBundle\Initializer\Page\Projects
+    jjk801_ladsm.phpcr.initializer.page.news.class: JJK801\Bundle\LADSMBundle\Initializer\Page\News
+    jjk801_ladsm.phpcr.initializer.page.calendar.class: JJK801\Bundle\LADSMBundle\Initializer\Page\Calendar
+    jjk801_ladsm.phpcr.initializer.page.gallery.class: JJK801\Bundle\LADSMBundle\Initializer\Page\Gallery
+    jjk801_ladsm.phpcr.initializer.page.about.class: JJK801\Bundle\LADSMBundle\Initializer\Page\About
+    jjk801_ladsm.phpcr.initializer.page.joinus.class: JJK801\Bundle\LADSMBundle\Initializer\Page\Joinus
+    jjk801_ladsm.phpcr.initializer.page.contact.class: JJK801\Bundle\LADSMBundle\Initializer\Page\Contact
+    jjk801_ladsm.phpcr.initializer.page.newsletter.class: JJK801\Bundle\LADSMBundle\Initializer\Page\Newsletter
+
+    # Menu
+
+    jjk801_ladsm.phpcr.initializer.menu.main.class: JJK801\Bundle\LADSMBundle\Initializer\Menu\Main
+    jjk801_ladsm.phpcr.initializer.menu.home.class: JJK801\Bundle\LADSMBundle\Initializer\Menu\Home
+    jjk801_ladsm.phpcr.initializer.menu.about.class: JJK801\Bundle\LADSMBundle\Initializer\Menu\About
+
+    #Admin
+
+    jjk801_ladsm.persistence.phpcr.admin.task.class: JJK801\Bundle\LADSMBundle\Admin\TaskAdmin
+    jjk801_ladsm.persistence.phpcr.admin.news.class: JJK801\Bundle\LADSMBundle\Admin\NewsAdmin
+    cmf_simple_cms.persistence.phpcr.admin.page.class: JJK801\Bundle\LADSMBundle\Admin\PageAdmin
+services:
+
+    # Menu
+
+    jjk801_ladsm.phpcr.initializer.menu.main:
+        class: %jjk801_ladsm.phpcr.initializer.menu.main.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    jjk801_ladsm.phpcr.initializer.menu.home:
+        class: %jjk801_ladsm.phpcr.initializer.menu.home.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    jjk801_ladsm.phpcr.initializer.menu.about:
+        class: %jjk801_ladsm.phpcr.initializer.menu.about.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    # Pages
+
+    jjk801_ladsm.phpcr.initializer.page.home:
+        class: %jjk801_ladsm.phpcr.initializer.page.home.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    jjk801_ladsm.phpcr.initializer.page.projects:
+        class: %jjk801_ladsm.phpcr.initializer.page.projects.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    jjk801_ladsm.phpcr.initializer.page.news:
+        class: %jjk801_ladsm.phpcr.initializer.page.news.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    jjk801_ladsm.phpcr.initializer.page.calendar:
+        class: %jjk801_ladsm.phpcr.initializer.page.calendar.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    jjk801_ladsm.phpcr.initializer.page.gallery:
+        class: %jjk801_ladsm.phpcr.initializer.page.gallery.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    jjk801_ladsm.phpcr.initializer.page.about:
+        class: %jjk801_ladsm.phpcr.initializer.page.about.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    jjk801_ladsm.phpcr.initializer.page.joinus:
+        class: %jjk801_ladsm.phpcr.initializer.page.joinus.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    jjk801_ladsm.phpcr.initializer.page.contact:
+        class: %jjk801_ladsm.phpcr.initializer.page.contact.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    jjk801_ladsm.phpcr.initializer.page.newsletter:
+        class: %jjk801_ladsm.phpcr.initializer.page.newsletter.class%
+        tags:
+            - { name: "doctrine_phpcr.initializer" }
+
+    # Admin
+
+    jjk801_ladsm.persistence.phpcr.admin.task:
+        class: %jjk801_ladsm.persistence.phpcr.admin.task.class%
+        arguments:
+            - ~
+            - %jjk801_ladsm.phpcr.document.task%
+            - "SonataAdminBundle:CRUD"
+        calls:
+            - [ setRouteBuilder, [@sonata.admin.route.path_info_slashes]]
+            - [ setRouteRoot, ['/cms/simple/calendar']]
+            - [ setSortOrder, [%cmf_simple_cms.persistence.phpcr.admin.sort%]]
+            - [ setControllerResolver, [@controller_resolver]]
+            - [ setDoctrine, [@doctrine_phpcr]]
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: dashboard.cmf, label: dashboard.label_task, label_catalogue: CmfSimpleCmsBundle, label_translator_strategy: sonata.admin.label.strategy.underscore }
+
+    jjk801_ladsm.persistence.phpcr.admin.news:
+        class: %jjk801_ladsm.persistence.phpcr.admin.news.class%
+        arguments:
+            - ~
+            - %jjk801_ladsm.phpcr.document.news%
+            - "SonataAdminBundle:CRUD"
+        calls:
+            - [ setRouteBuilder, [@sonata.admin.route.path_info_slashes]]
+            - [ setRouteRoot, ['/cms/simple/news']]
+            - [ setSortOrder, [%cmf_simple_cms.persistence.phpcr.admin.sort%]]
+            - [ setControllerResolver, [@controller_resolver]]
+            - [ setDoctrine, [@doctrine_phpcr]]
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: dashboard.cmf, label: dashboard.label_news, label_catalogue: CmfSimpleCmsBundle, label_translator_strategy: sonata.admin.label.strategy.underscore }

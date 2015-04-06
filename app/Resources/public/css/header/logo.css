@@ -1,0 +1,34 @@
+#header > #logo
+{
+    text-align: center;
+    padding: 20px 0;
+    background-color: white;
+}
+
+#header > #logo div#title
+{
+    display: inline-block;
+    color: #F09510;
+    font-weight: bold;
+    margin: 0 50px;
+    font-family: "Arial Black", Arial, Verdana, sans-serif;
+}
+
+#header > #logo  div#title h1
+{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+#header > #logo  div#title div.desc
+{
+    font-size: 20px;
+}
+
+#header > #logo > img
+{
+    vertical-align: top;
+}

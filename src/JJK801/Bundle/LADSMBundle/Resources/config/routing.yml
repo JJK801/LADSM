@@ -1,0 +1,3 @@
+jjk801_ladsm_homepage:
+    pattern:  /
+    defaults: { _controller: JJK801LADSMBundle:Default:index }

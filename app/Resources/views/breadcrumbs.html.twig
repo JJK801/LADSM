@@ -1,0 +1,13 @@
+{% set currentItem = knp_menu_get('simple').currentItem %}
+
+<nav id="breadcrumbs" class="container">
+    <ul>
+{% if currentItem %}
+{% for title, url in currentItem.breadcrumbsArray %}
+        <li>
+            <a href="{{url}}">{{ title }}</a>
+        </li>
+{% endfor %}
+{% endif %}
+    </ul>
+</nav>

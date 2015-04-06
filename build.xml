@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<project name="Les amis de soeur Myriam" default="install" basedir="." description="LADSM Main build.">
+    <target name="install">
+	<phing phingfile="build/install.xml" target="composer" />
+	<phing phingfile="build/install.xml" target="assets" />
+    </target>
+    <target name="clean">
+	<phing phingfile="build/clean.xml" target="composer" />
+	<phing phingfile="build/clean.xml" target="assets" />
+	<phing phingfile="build/clean.xml" target="cache" />
+    </target>
+    <target name="serve">
+	<phing phingfile="build.xml" target="install" />
+	<phing phingfile="build/server.xml" target="run" />
+    </target>
+</project>

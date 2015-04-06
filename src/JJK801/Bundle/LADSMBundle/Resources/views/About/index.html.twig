@@ -1,0 +1,8 @@
+{% extends "::layout.html.twig" %}
+
+{% block content %}
+    <div id="about_content">
+        {{ sonata_block_render({'name': '/cms/content/about'}) }}
+        {{ knp_menu_render('about') }}
+    </div>
+{% endblock %}

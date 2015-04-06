@@ -1,0 +1,109 @@
+#home_slideshow
+{
+   width: 600px;
+   margin-bottom: 15px;
+   padding: 0;
+}
+
+#home_slideshow .slideshow
+{  
+   width: 600px;
+   height: 300px;
+   overflow: hidden;
+   position: relative;
+   border: 3px solid #F2F2F2;
+}
+
+#home_slideshow .slideshow ul
+{   
+   width: 700%;  /* NbImages * 100 */
+   height: 300px;
+   padding:0;
+   margin:0;
+   list-style: none;
+   position: relative;
+}
+
+#home_slideshow .slideshow li
+{
+   position: relative;
+   float: left;  
+}
+
+#home_slideshow .slideshow li span
+{ 
+   position: absolute;
+   display: block;
+   width: 100%;
+   font-size: 30px;
+   top: 250px;
+   text-align: center;
+   color: white;
+   font-weight: bold;
+   text-shadow: 0 0 5px black;
+}
+
+.home_slideshow-pagination
+{
+   display: inline-block;
+   float: right;
+}
+
+.home_slideshow-pagination a,
+.home_slideshow-control
+{
+   display: inline-block;
+   width: 16px;
+   height: 16px;
+   background-repeat: no-repeat;
+}
+
+.home_slideshow-pagination a
+{
+   background-image: url('/images/circle_grey16.png');
+}
+
+.home_slideshow-pagination a:hover
+{
+   outline: none;
+   background-image: url('/images/circle_green16.png');
+}
+
+.home_slideshow-pagination a:active,
+.home_slideshow-start a:active,
+.home_slideshow-stop a:active
+{
+   outline: none;
+}
+
+.home_slideshow-pagination a:focus,
+.home_slideshow-start:focus,
+.home_slideshow-stop:focus
+{
+   outline: none;
+}
+
+.home_slideshow-pagination a.active
+{
+   background-image: url('/images/circle_yellow16.png');
+}
+
+.home_slideshow-start
+{
+   background-image: url('/images/play_grey16.png');
+}
+
+.home_slideshow-start:hover
+{
+   background-image: url('/images/play_green16.png');
+}
+
+.home_slideshow-stop
+{
+   background-image: url('/images/pause_grey16.png');
+}
+
+.home_slideshow-stop:hover
+{
+   background-image: url('/images/pause_green16.png');
+}

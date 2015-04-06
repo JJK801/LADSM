@@ -1,0 +1,18 @@
+{% extends "::layout.html.twig" %}
+
+{% if cmfMainContent is not defined %}
+    {% set cmfMainContent = object %}
+{% endif %}
+
+{% set page = cmfMainContent %}
+
+{% block highlighted %}
+
+{% endblock %}
+
+{% block content -%}
+    <div id="news_content">
+        <h2>{{ page.title }}</h2>
+        {{ sonata_block_render({'name': page.id ~ '/editorial'}) }}
+    </div>
+{%- endblock %}

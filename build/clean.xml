@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<project name="Clean" default="cache" basedir=".." description="LADSM Install build.">
+    <target name="composer">
+        <delete dir="vendor" includeemptydirs="true" verbose="true" failonerror="true" />
+        <delete dir="bin" includeemptydirs="true" verbose="true" failonerror="true" />
+    </target>
+    <target name="assets">
+        <delete file="web/bundles" />
+        <delete dir="web/assets" includeemptydirs="true" />
+    </target>
+    <target name="cache">
+        <SymfonyConsole command="cache:clear" />
+        <delete dir="web/media" includeemptydirs="true" failonerror="true" />
+    </target>
+</project>

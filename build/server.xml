@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<project name="Server" default="run" basedir=".." description="LADSM server build.">
+    <target name="run">
+        <SymfonyConsole command="server:run" />
+    </target>
+</project>

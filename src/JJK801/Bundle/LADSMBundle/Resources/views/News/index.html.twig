@@ -1,0 +1,38 @@
+{% extends "::layout.html.twig" %}
+
+{% set page = cmfMainContent %}
+{% set children = cmf_children(page) %}
+{% set nbChildren = 0 %}
+
+{% block content -%}
+    <div id="news_content">
+        <h2>Actualités de l'association</h2>
+        <table class="news" border="1">
+            <thead>
+                <tr>
+                    <th class="start_at">Date</th>
+                    <th class="title">Titre</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if children is not empty %}
+                    {% for item in children if cmf_is_linkable(item) %}
+                        {% set nbChildren = nbChildren+1 %}
+                <tr>
+                    <td class="start_at">{{ item.createdAt|date("d/m/Y") }}</td>
+                    <td class="title">
+                        <a href="{{ path(item) }}">{{ item.label }}</a>
+                    </td>
+                </tr>
+                    {% endfor %}
+                {% endif %}
+
+                {% if nbChildren == 0 %}
+                <tr>
+                    <td colspan="3" style="text-align: center">Aucune actualité disponible actuellement.</td>
+                </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+{%- endblock %}
