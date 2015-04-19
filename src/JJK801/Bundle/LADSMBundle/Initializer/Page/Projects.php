@@ -12,6 +12,7 @@ class Projects extends AbstractPageInitializer
      */
     public function init(ManagerRegistry $registry)
     {
+        /*
         $this->setPage(array(
             "nodeName" => "projects",
             "title"    => "Projets",
@@ -33,7 +34,8 @@ class Projects extends AbstractPageInitializer
                 ),
             ),
         ));
-        
+
         parent::init($registry);
+        */
     }
 }

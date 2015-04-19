@@ -12,6 +12,7 @@ class Gallery extends AbstractPageInitializer
      */
     public function init(ManagerRegistry $registry)
     {
+        /*
         $this->setPage(array(
             "nodeName" => "gallery",
             "title"    => "Galerie",
@@ -33,7 +34,8 @@ class Gallery extends AbstractPageInitializer
                 ),
             ),
         ));
-        
+
         parent::init($registry);
+        */
     }
 }
